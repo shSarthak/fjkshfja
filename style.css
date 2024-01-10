@@ -1,0 +1,561 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    
+}
+
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 5px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3498db;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #3498db;
+}
+
+
+nav a.active {
+    color: #3498db; /* Highlight color for the active link */
+}
+
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    overflow: hidden;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 200px 0;
+    height: 528px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2; /* Ensure text is on top of the carousel */
+}
+
+#heroCarousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Set a lower z-index for the carousel */
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: #ecf0f1;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    position: relative;
+    z-index: 2; /* Ensure button is on top of the carousel */
+}
+
+.cta-button:hover {
+    background-color: #2980b9;
+}
+
+
+
+/* Courses Section Styles */
+.courses {
+    background-color: #f9f9f9;
+    padding: 100px 0;
+    position: relative;
+    text-align: center;
+}
+
+.container h2{
+    color: #2980b9;
+    font-size: 3rem;
+}
+.course-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.course {
+    width: calc(33.333% - 20px);
+    margin: 20px;
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.course:hover {
+    transform: scale(1.05);
+}
+
+.course h3 {
+    font-size: 1.8rem;
+    color: #3498db;
+}
+
+.course p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 15px;
+}
+
+/* Icons */
+.course i {
+    font-size: 2rem;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+/* Shapes for Courses Section */
+.courses::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 100vw 0 0;
+    border-color: transparent transparent transparent transparent;
+    background-color: transparent;
+    z-index: -1;
+}
+
+.view-more-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.view-more-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: #ecf0f1;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.view-more-button:hover {
+    background-color: #2980b9;
+}
+/* Schedule Section Styles */
+.schedule {
+    background-color: #ecf0f1;
+    padding: 100px 0;
+}
+
+.schedule h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.schedule-table {
+    overflow-x: auto; /* Add horizontal scrollbar if the table overflows */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead th,
+tbody td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+thead th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+tbody td {
+    background-color: #fff;
+    color: #555;
+}
+
+tbody td:first-child {
+    font-weight: bold;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 767px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    tbody td,
+    thead th {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    tbody td:first-child {
+        text-align: left;
+    }
+
+    tbody td:nth-child(2):before {
+        content: "Monday: ";
+        font-weight: bold;
+    }
+
+    tbody td:nth-child(3):before {
+        content: "Tuesday: ";
+        font-weight: bold;
+    }
+
+    tbody td:nth-child(4):before {
+        content: "Wednesday: ";
+        font-weight: bold;
+    }
+
+    tbody td:nth-child(5):before {
+        content: "Thursday: ";
+        font-weight: bold;
+    }
+
+    tbody td:nth-child(6):before {
+        content: "Friday: ";
+        font-weight: bold;
+    }
+}
+
+.about {
+    background-color: #3498db;
+    color: #fff;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 600px;
+    color: #fff;
+}
+.about-text:hover{
+    transform: scale(1.05);
+}
+
+.about-image {
+    flex: 1;
+    max-width: 600px;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.about-image img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+}
+.about::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 20px 100vw;
+    border-color: transparent transparent transparent transparent;
+    background-color: transparent;
+    z-index: -1;
+}
+
+/* Why Choose Us Section Styles */
+.why-choose-us {
+    background-color: #3498db;
+    color: #fff;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.why-choose-us h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.why-choose-us ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.why-choose-us li {
+    width: calc(33.333% - 20px);
+    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.why-choose-us li:hover {
+    transform: scale(1.05);
+}
+
+.why-choose-us h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.why-choose-us p {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.icon-box {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #3498db;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.icon-box i {
+    font-size: 1rem;
+}
+
+/* Contact Section Styles */
+.contact {
+    background-color: #ecf0f1;
+    padding: 100px 0;
+    text-align: center;
+}
+.contact h2 {
+    color: #2980b9;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.checkbox-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+
+.checkbox-group input {
+    margin-right: 5px;
+}
+
+.contact-form button {
+    padding: 15px 30px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #2980b9;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    color: #555;
+    cursor: pointer;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    outline: none;
+    transition: background-color 0.3s, border-color 0.3s;
+    cursor: pointer;
+}
+
+.checkbox-group input:checked {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.checkbox-group input::after {
+    content: '\2713';
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.checkbox-group input:checked::after {
+    opacity: 1;
+}
+
+/* Style for invalid input */
+input:invalid {
+    border: 1px solid red;
+}
+
+/* Style for valid input */
+input:valid {
+    border: 1px solid green;
+}
+
+/* Style for displaying error message */
+span.error-message {
+    color: red;
+    display: block;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.social-icons {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.social-icons li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
